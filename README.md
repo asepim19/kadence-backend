@@ -9,5 +9,5 @@ foo@bar:~$ npm install / yarn
 
 #START
 ```bash 
-foo@bar:~$ npm start / yarn start
+foo@bar:~$ node app.js / nodemon app.js
 ```
