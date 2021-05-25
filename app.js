@@ -11,8 +11,6 @@ app.listen(port, hostname, () => {
 const extract = () => {
 	const workbook = XLSX.readFile("./data/rawdata.xlsx");
 	const sheet_name_list = workbook.SheetNames;
-	console.log(sheet_name_list);
-
 	let worksheet = workbook.Sheets["Sheet1"];
 	let headers = {};
 	let data = [];
@@ -128,7 +126,6 @@ const renderCase2B = (data) => {
 };
 
 const renderCase3 = (data) => {
-	console.log(data);
 	let render = `<h3>3. Persentase Berdasarkan Kota Dan Sorting Kota Terbanyak Dari 100 Responden</h3>`;
 	render += "<table>";
 	render += "<tr><th>No</th><th>Nama Kota</th><th>TOTAL</th></tr>";
@@ -148,6 +145,7 @@ const renderCase3 = (data) => {
 app.get("/", (req, res) => {
 	let data = extract();
 	let renderAll = "<html>";
+	renderAll += "<title>Kadence</title>";
 	renderAll += "<body style='margin:40px'>";
 	renderAll +=
 		"<style>td,th{border:1px solid #ddd;text-align:left;padding:8px}tr:nth-child(even){background-color:#ddd}</style>";
